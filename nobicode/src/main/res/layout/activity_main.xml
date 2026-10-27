@@ -1,0 +1,670 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="false">
+
+    <LinearLayout
+        android:id="@+id/mainRoot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="?attr/colorSurface">
+
+        <!-- Top Header App Bar -->
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorSurface"
+            app:elevation="0dp">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@android:color/transparent"
+                app:navigationIcon="@drawable/ic_menu"
+                app:title="@string/app_name"
+                app:titleTextAppearance="@style/TextAppearance.Material3.TitleLarge"
+                app:menu="@menu/main_menu" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <!-- Horizontal Tab Bar -->
+        <HorizontalScrollView
+            android:id="@+id/tabScroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:background="?attr/colorSurface">
+
+            <LinearLayout
+                android:id="@+id/tabContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="6dp" />
+
+        </HorizontalScrollView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?attr/colorOutlineVariant"
+            android:alpha="0.4" />
+
+        <!-- w22: file line — short path • language • encoding • line ending, one line -->
+        <TextView
+            android:id="@+id/fileBreadcrumb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorSurface"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:paddingStart="14dp"
+            android:paddingEnd="12dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            android:textSize="12sp" />
+
+        <!-- Breadcrumb navigation strip -->
+        <HorizontalScrollView
+            android:id="@+id/breadcrumbScroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:background="?attr/colorSurface"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/breadcrumbContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="4dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp" />
+
+        </HorizontalScrollView>
+
+        <!-- Editor View Container -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <com.nobidev.nobicode.editor.CodeEditorView
+                android:id="@+id/editor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <com.nobidev.nobicode.editor.MinimapView
+                android:id="@+id/minimap"
+                android:layout_width="56dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:layout_marginEnd="10dp"
+                android:visibility="gone" />
+
+            <ImageButton
+                android:id="@+id/zenExitBtn"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="16dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_close"
+                android:contentDescription="Exit zen mode"
+                android:visibility="gone" />
+
+            <WebView
+                android:id="@+id/markdownPreview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+
+            <WebView
+                android:id="@+id/htmlPreview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+
+            <ProgressBar
+                android:id="@+id/editorLoadingSpinner"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center"
+                android:indeterminateTint="?attr/colorPrimary"
+                android:visibility="gone" />
+
+            <!-- Custom draggable scrollbar thumb: enlarges while scrolling/dragging -->
+            <View
+                android:id="@+id/editorScrollThumb"
+                android:layout_width="8dp"
+                android:layout_height="64dp"
+                android:layout_gravity="end|top"
+                android:layout_marginEnd="4dp"
+                android:background="@drawable/bg_scrollbar_thumb"
+                android:alpha="0.55"
+                android:visibility="gone" />
+
+            <!-- Welcome / empty state: shown when only an empty untitled tab is open -->
+            <LinearLayout
+                android:id="@+id/welcomeView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="32dp"
+                android:background="?attr/colorSurface"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="240dp"
+                    android:layout_height="140dp"
+                    android:src="@drawable/nobi_img_welcome"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Welcome to NobiCode"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="?attr/colorOnSurface" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="Open a folder or file to start coding"
+                    android:textSize="14sp"
+                    android:textColor="?attr/colorOnSurfaceVariant" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/welcomeOpenFolder"
+                    style="@style/Widget.Material3.Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:text="Open Folder"
+                    app:icon="@drawable/ic_folder_open" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/welcomeOpenFile"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Open File"
+                    app:icon="@drawable/ic_file" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/welcomeRecentBtn"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/followup_recent_button"
+                    app:icon="@drawable/ic_history" />
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <!-- v7 (63): last-run output strip (hidden until output arrives). -->
+        <LinearLayout
+            android:id="@+id/nobi_output_strip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#CC1A1A2E"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/nobi_output_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:fontFamily="monospace"
+                android:maxLines="4"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/nobi_output_open_terminal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Terminal"
+                android:textSize="12sp" />
+
+            <ImageButton
+                android:id="@+id/nobi_output_close"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Hide output"
+                android:src="@drawable/ic_close" />
+        </LinearLayout>
+
+        <!-- Status Line Bar -->
+        <LinearLayout
+            android:id="@+id/statusBar"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:background="?attr/colorSurfaceContainerLow"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp">
+
+            <ImageView
+                android:id="@+id/statusLangIcon"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:src="@drawable/ic_code"
+                android:scaleType="fitCenter" />
+
+            <TextView
+                android:id="@+id/statusLang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="@string/status_lang"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="?attr/colorOnSurfaceVariant" />
+
+            <View
+                android:id="@+id/statusModifiedDot"
+                android:layout_width="6dp"
+                android:layout_height="6dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_scrollbar"
+                android:backgroundTint="@color/accent_dot"
+                android:visibility="gone" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/statusPos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/status_line"
+                android:textSize="11sp"
+                android:textColor="?attr/colorOnSurfaceVariant" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="10dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="?attr/colorOnSurfaceVariant"
+                android:alpha="0.3" />
+
+            <TextView
+                android:id="@+id/statusEncoding"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/status_encoding"
+                android:textSize="11sp"
+                android:textColor="?attr/colorOnSurfaceVariant" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?attr/colorOutlineVariant"
+            android:alpha="0.4" />
+
+        <!-- v11 follow-up (17): custom toolbar row (stored order, max 8 tools) -->
+        <HorizontalScrollView
+            android:id="@+id/followupToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="?attr/colorSurfaceContainerLow"
+            android:scrollbars="none"
+            android:fillViewport="true"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/followupToolbarContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp" />
+        </HorizontalScrollView>
+
+        <!-- Symbols bar: phone keyboard par mushkil wale symbols ek tap par -->
+        <HorizontalScrollView
+            android:id="@+id/symbolsBar"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="?attr/colorSurfaceContainerLow"
+            android:scrollbars="none"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:id="@+id/symbolsContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp" />
+        </HorizontalScrollView>
+
+        <!-- Pure Modern Footer (Undo, Redo, Save, Find, Select All, Paste, Clear All) -->
+        <LinearLayout
+            android:id="@+id/footerBar"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="?attr/colorSurfaceContainerLow"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp">
+
+            <ImageView
+                android:id="@+id/btnUndo"
+                android:layout_width="0dp"
+                android:layout_height="38dp"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:src="@drawable/ic_undo"
+                android:background="@drawable/bg_footer_btn"
+                app:tint="?attr/colorOnSurface"
+                android:contentDescription="Undo" />
+
+            <ImageView
+                android:id="@+id/btnRedo"
+                android:layout_width="0dp"
+                android:layout_height="38dp"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:src="@drawable/ic_redo"
+                android:background="@drawable/bg_footer_btn"
+                app:tint="?attr/colorOnSurface"
+                android:contentDescription="Redo" />
+
+            <ImageView
+                android:id="@+id/btnSave"
+                android:layout_width="0dp"
+                android:layout_height="38dp"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:src="@drawable/ic_save"
+                android:background="@drawable/bg_footer_btn"
+                app:tint="?attr/colorOnSurface"
+                android:contentDescription="Save" />
+
+            <ImageView
+                android:id="@+id/btnFind"
+                android:layout_width="0dp"
+                android:layout_height="38dp"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:src="@drawable/ic_search"
+                android:background="@drawable/bg_footer_btn"
+                app:tint="?attr/colorOnSurface"
+                android:contentDescription="Find" />
+
+            <ImageView
+                android:id="@+id/btnSelectAll"
+                android:layout_width="0dp"
+                android:layout_height="38dp"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:src="@drawable/ic_select_all"
+                android:background="@drawable/bg_footer_btn"
+                app:tint="?attr/colorOnSurface"
+                android:contentDescription="Select All" />
+
+            <ImageView
+                android:id="@+id/btnPaste"
+                android:layout_width="0dp"
+                android:layout_height="38dp"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:src="@drawable/ic_content_paste"
+                android:background="@drawable/bg_footer_btn"
+                app:tint="?attr/colorOnSurface"
+                android:contentDescription="Paste" />
+
+            <ImageView
+                android:id="@+id/btnClearAll"
+                android:layout_width="0dp"
+                android:layout_height="38dp"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:src="@drawable/ic_clear_all"
+                android:background="@drawable/bg_footer_btn"
+                app:tint="?attr/colorOnSurface"
+                android:contentDescription="Clear All" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- File Manager Sidebar Drawer (3-Line Navigation Menu) -->
+    <LinearLayout
+        android:id="@+id/drawerContent"
+        android:layout_width="320dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:orientation="vertical"
+        android:background="?attr/colorSurfaceContainerLow">
+
+        <!-- Top Header: Title, Path, Refresh & New File Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="12dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="6dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/drawerCurrentFolder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_name"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:textColor="?attr/colorOnSurface" />
+
+                <TextView
+                    android:id="@+id/drawerPath"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/drawer_empty"
+                    android:textSize="11sp"
+                    android:singleLine="true"
+                    android:ellipsize="start"
+                    android:textColor="?attr/colorOnSurfaceVariant" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/quickOpenBtn"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:padding="8dp"
+                android:src="@drawable/ic_search"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                app:tint="?attr/colorOnSurfaceVariant"
+                android:contentDescription="Quick open" />
+
+            <ImageView
+                android:id="@+id/remoteBtn"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:padding="8dp"
+                android:src="@drawable/ic_cloud"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                app:tint="?attr/colorOnSurfaceVariant"
+                android:contentDescription="Remote servers" />
+
+            <ImageView
+                android:id="@+id/refreshBtn"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:padding="8dp"
+                android:src="@drawable/ic_refresh"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                app:tint="?attr/colorOnSurfaceVariant"
+                android:contentDescription="@string/cd_refresh" />
+
+            <ImageView
+                android:id="@+id/newEntryBtn"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:padding="8dp"
+                android:src="@drawable/ic_add"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                app:tint="?attr/colorOnSurfaceVariant"
+                android:contentDescription="@string/file_new" />
+
+        </LinearLayout>
+
+        <!-- Action Row: Folder Actions in Sidebar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="14dp"
+            android:layout_marginEnd="14dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/pickFolderBtn"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="@string/drawer_pick"
+                android:textSize="14sp"
+                app:icon="@drawable/ic_folder_open"
+                app:iconSize="20dp"
+                app:cornerRadius="14dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?attr/colorOutlineVariant"
+            android:alpha="0.4" />
+
+        <!-- Fast File Manager RecyclerView -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/fileRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical"
+                android:clipToPadding="false"
+                android:paddingBottom="24dp" />
+
+            <ProgressBar
+                android:id="@+id/drawerLoadingProgress"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center"
+                android:indeterminateTint="?attr/colorPrimary"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/emptyFolderText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Folder is empty"
+                android:textSize="13sp"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:visibility="gone" />
+
+            <!-- Friendly empty state when no folder is opened -->
+            <LinearLayout
+                android:id="@+id/drawerEmptyState"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="32dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_marginBottom="8dp"
+                    android:src="@drawable/nobi_img_drawer_banner"
+                    android:scaleType="centerCrop" />
+
+                <ImageView
+                    android:layout_width="76dp"
+                    android:layout_height="76dp"
+                    android:src="@drawable/nobi_ic_empty_folder"
+                    app:tint="?attr/colorPrimary"
+                    android:alpha="0.9" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/drawer_empty_title"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:textColor="?attr/colorOnSurface" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/drawer_empty_hint"
+                    android:textSize="13sp"
+                    android:gravity="center"
+                    android:textColor="?attr/colorOnSurfaceVariant" />
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>

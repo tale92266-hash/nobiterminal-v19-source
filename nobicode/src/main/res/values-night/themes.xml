@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- v16: night half of Theme.NobiCode.DayNight. These items are an exact
+         copy of Theme.NobiCode's dark items, so editor Settings in dark mode
+         looks identical to before; light mode uses the day half in
+         values/themes.xml (stock Material3 light palette, no invented
+         colors). Only SettingsActivity uses this theme. -->
+    <style name="Theme.NobiCode.DayNight" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorOnPrimary">@color/on_primary</item>
+        <item name="colorPrimaryContainer">@color/primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/on_primary_container</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/on_surface</item>
+        <item name="colorSurfaceContainerLow">@color/surface_container_low</item>
+        <item name="colorSurfaceContainerHigh">@color/surface_container_high</item>
+        <item name="colorOnSurfaceVariant">@color/on_surface_variant</item>
+        <item name="colorOutlineVariant">@color/outline_variant</item>
+        <item name="android:statusBarColor">@color/surface_container_low</item>
+        <item name="android:navigationBarColor">@color/surface_container_low</item>
+    </style>
+</resources>

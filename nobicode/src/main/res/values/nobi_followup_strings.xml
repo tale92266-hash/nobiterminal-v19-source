@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_followup">Editor tools</string>
+    <string name="followup_recent_button">Recent files</string>
+    <string name="followup_menu_title">Editor tools</string>
+    <string name="followup_custom_toolbar_title">Customise toolbar</string>
+</resources>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/ghUrl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Repository URL (https://github.com/owner/repo)"
+        android:inputType="textUri" />
+
+    <EditText
+        android:id="@+id/ghToken"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Access token (optional; never saved)"
+        android:inputType="textPassword" />
+
+    <TextView
+        android:id="@+id/ghInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/ghCloneBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Clone into editor" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/ghSyncBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sync current repo (pull)" />
+</LinearLayout>

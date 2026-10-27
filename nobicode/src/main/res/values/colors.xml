@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Modern vivid violet primary -->
+    <color name="primary">#8B7CF6</color>
+    <color name="on_primary">#FFFFFF</color>
+    <color name="primary_container">#2B2456</color>
+    <color name="on_primary_container">#DCD6FF</color>
+
+    <!-- Deep modern surfaces -->
+    <color name="surface">#12131B</color>
+    <color name="on_surface">#E6E9F5</color>
+    <color name="surface_container_low">#0D0E14</color>
+    <color name="surface_container_high">#1F2230</color>
+    <!-- w24: secondary text = app cyan #22D3EE at 80% (was grey-violet #8E94AD);
+         ~6.9:1 on surface, so small secondary text keeps its 4.5:1 floor. -->
+    <color name="on_surface_variant">#CC22D3EE</color>
+
+    <color name="outline">#333948</color>
+    <color name="outline_variant">#222633</color>
+    <color name="accent_dot">#FF6B8A</color>
+
+    <!-- Editor gutter -->
+    <color name="gutter_bg">#0D0E14</color>
+    <color name="gutter_line">#3D435C</color>
+</resources>

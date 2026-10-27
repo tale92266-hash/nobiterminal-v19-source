@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/surface">
+
+    <EditText
+        android:id="@+id/qsSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Type to filter files..."
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:background="@drawable/bg_search_box"
+        android:padding="12dp"
+        android:textColor="@color/on_surface"
+        android:textColorHint="@color/on_surface_variant" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/qsList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxHeight="400dp"
+        android:layout_marginTop="8dp" />
+
+</LinearLayout>

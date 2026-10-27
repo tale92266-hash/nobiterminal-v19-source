@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/quickOpenSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Type file name..."
+        android:singleLine="true"
+        android:imeOptions="actionSearch"
+        android:importantForAutofill="no" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/quickOpenList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxHeight="340dp"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/quickOpenEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Indexing files..."
+        android:textColor="?attr/colorOnSurfaceVariant" />
+
+</LinearLayout>

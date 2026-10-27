@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Toolbar icons (always visible) -->
+    <item
+        android:id="@+id/action_git"
+        android:title="Git"
+        android:icon="@drawable/ic_git_branch"
+        app:showAsAction="always" />
+
+    <!-- Dynamic Run / Preview Action next to 3-dots -->
+    <item
+        android:id="@+id/action_run"
+        android:title="Run / Preview"
+        android:icon="@drawable/ic_run"
+        app:showAsAction="always"
+        android:visible="false" />
+
+    <!-- 3-dot overflow: ONLY basics. Everything else lives in the command palette. -->
+    <item
+        android:id="@+id/action_open_file"
+        android:title="@string/action_open_file"
+        android:icon="@drawable/ic_folder_open"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_save"
+        android:title="@string/action_save"
+        android:icon="@drawable/ic_save"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_save_as"
+        android:title="@string/action_save_as"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_new"
+        android:title="@string/action_new"
+        android:icon="@drawable/ic_add"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_command_palette"
+        android:title="@string/action_command_palette"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_quick_switch"
+        android:title="Quick Switch"
+        android:icon="@drawable/ic_switch"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_followup"
+        android:title="@string/action_followup"
+        android:icon="@drawable/ic_code"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_terminal"
+        android:title="Terminal"
+        android:icon="@drawable/ic_terminal"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_goto"
+        android:title="@string/action_goto"
+        app:showAsAction="never" />
+
+    <!-- v6 (11): list of functions in the file, tap to jump. -->
+    <item
+        android:id="@+id/action_outline"
+        android:title="Code Outline"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_markdown_preview"
+        android:title="@string/action_markdown_preview"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_settings"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+</menu>
