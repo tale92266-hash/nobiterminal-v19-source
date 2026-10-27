@@ -1,0 +1,35 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="400dp"
+    android:height="160dp"
+    android:viewportWidth="400"
+    android:viewportHeight="160">
+
+    <!-- v10 drawer banner: navy base, violet sweep, cyan ring, bold N with
+         a folder tab underneath (drawer = files motif). Vector only. -->
+    <path
+        android:fillColor="#0A0F24"
+        android:pathData="M0,0 H400 V160 H0 Z" />
+    <path
+        android:fillColor="#8B5CF6"
+        android:fillAlpha="0.30"
+        android:pathData="M220,160 L360,0 L400,0 L400,160 Z" />
+    <path
+        android:fillColor="#22D3EE"
+        android:fillAlpha="0.35"
+        android:pathData="M30,40 A34,34 0 1 1 30,108 A34,34 0 1 1 30,40 Z" />
+    <path
+        android:fillColor="#22D3EE"
+        android:pathData="M168,28 L192,28 L224,92 L224,28 L248,28 L248,132 L224,132 L192,68 L192,132 L168,132 Z" />
+    <path
+        android:fillColor="#8B5CF6"
+        android:pathData="M150,132 L158,118 L258,118 L266,132 Z" />
+    <path
+        android:fillColor="#22D3EE"
+        android:fillAlpha="0.55"
+        android:pathData="M300,112 A10,10 0 1 1 300,132 A10,10 0 1 1 300,112 Z" />
+    <path
+        android:fillColor="#E879F9"
+        android:fillAlpha="0.45"
+        android:pathData="M140,20 A7,7 0 1 1 140,34 A7,7 0 1 1 140,20 Z" />
+
+</vector>

@@ -1,0 +1,45 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="400dp"
+    android:height="160dp"
+    android:viewportWidth="400"
+    android:viewportHeight="160">
+
+    <!-- v10 welcome art: deep navy base, cyan beam, violet glow, bold N
+         with code brackets and a terminal prompt dot. Vector only: no
+         raster, no emoji, scales cleanly at any density. -->
+    <path
+        android:fillColor="#0A0F24"
+        android:pathData="M0,0 H400 V160 H0 Z" />
+    <path
+        android:fillColor="#22D3EE"
+        android:fillAlpha="0.28"
+        android:pathData="M-20,160 L180,0 L300,0 L100,160 Z" />
+    <path
+        android:fillColor="#8B5CF6"
+        android:fillAlpha="0.35"
+        android:pathData="M400,30 A52,52 0 1 1 400,134 A52,52 0 1 1 400,30 Z" />
+    <path
+        android:fillColor="#22D3EE"
+        android:pathData="M168,28 L192,28 L224,92 L224,28 L248,28 L248,132 L224,132 L192,68 L192,132 L168,132 Z" />
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#22D3EE"
+        android:strokeWidth="6"
+        android:pathData="M96,62 L124,80 L96,98" />
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#8B5CF6"
+        android:strokeWidth="6"
+        android:pathData="M304,62 L276,80 L304,98" />
+    <path
+        android:fillColor="#E879F9"
+        android:pathData="M52,26 A14,14 0 1 1 52,54 A14,14 0 1 1 52,26 Z" />
+    <path
+        android:fillColor="#22D3EE"
+        android:fillAlpha="0.5"
+        android:pathData="M120,118 A9,9 0 1 1 120,136 A9,9 0 1 1 120,118 Z" />
+    <path
+        android:fillColor="#22D3EE"
+        android:pathData="M272,132 H344 V140 H272 Z" />
+
+</vector>

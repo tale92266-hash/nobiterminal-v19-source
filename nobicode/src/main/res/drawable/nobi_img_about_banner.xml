@@ -1,0 +1,38 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="400dp"
+    android:height="160dp"
+    android:viewportWidth="400"
+    android:viewportHeight="160">
+
+    <!-- v10 about banner: navy base, cyan and violet beams, bold N with
+         code brackets. Vector only. -->
+    <path
+        android:fillColor="#0A0F24"
+        android:pathData="M0,0 H400 V160 H0 Z" />
+    <path
+        android:fillColor="#22D3EE"
+        android:fillAlpha="0.25"
+        android:pathData="M80,160 L260,0 L340,0 L160,160 Z" />
+    <path
+        android:fillColor="#8B5CF6"
+        android:fillAlpha="0.35"
+        android:pathData="M52,44 A30,30 0 1 1 52,104 A30,30 0 1 1 52,44 Z" />
+    <path
+        android:fillColor="#22D3EE"
+        android:pathData="M168,28 L192,28 L224,92 L224,28 L248,28 L248,132 L224,132 L192,68 L192,132 L168,132 Z" />
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#8B5CF6"
+        android:strokeWidth="6"
+        android:pathData="M96,62 L124,80 L96,98" />
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#22D3EE"
+        android:strokeWidth="6"
+        android:pathData="M320,62 L292,80 L320,98" />
+    <path
+        android:fillColor="#22D3EE"
+        android:fillAlpha="0.5"
+        android:pathData="M330,104 A12,12 0 1 1 330,128 A12,12 0 1 1 330,104 Z" />
+
+</vector>

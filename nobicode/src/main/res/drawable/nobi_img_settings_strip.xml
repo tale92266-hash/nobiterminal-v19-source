@@ -1,0 +1,38 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="400dp"
+    android:height="100dp"
+    android:viewportWidth="400"
+    android:viewportHeight="100">
+
+    <!-- v10 settings header strip: navy base, cyan beam, small N mark and
+         slider rows (the settings motif). Vector only. -->
+    <path
+        android:fillColor="#0A0F24"
+        android:pathData="M0,0 H400 V100 H0 Z" />
+    <path
+        android:fillColor="#22D3EE"
+        android:fillAlpha="0.30"
+        android:pathData="M-10,100 L150,0 L230,0 L70,100 Z" />
+    <path
+        android:fillColor="#8B5CF6"
+        android:fillAlpha="0.40"
+        android:pathData="M368,22 A24,24 0 1 1 368,70 A24,24 0 1 1 368,22 Z" />
+    <path
+        android:fillColor="#22D3EE"
+        android:pathData="M30,22 L46,22 L62,54 L62,22 L78,22 L78,78 L62,78 L46,46 L46,78 L30,78 Z" />
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#22D3EE"
+        android:strokeWidth="4"
+        android:pathData="M120,34 H240 M120,56 H200 M120,78 H260" />
+    <path
+        android:fillColor="#E879F9"
+        android:pathData="M240,26 A8,8 0 1 1 240,42 A8,8 0 1 1 240,26 Z" />
+    <path
+        android:fillColor="#E879F9"
+        android:pathData="M200,48 A8,8 0 1 1 200,64 A8,8 0 1 1 200,48 Z" />
+    <path
+        android:fillColor="#E879F9"
+        android:pathData="M260,70 A8,8 0 1 1 260,86 A8,8 0 1 1 260,70 Z" />
+
+</vector>
