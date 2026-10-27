@@ -1,0 +1,25 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="400dp"
+    android:height="160dp"
+    android:viewportWidth="400"
+    android:viewportHeight="160">
+
+    <!-- Decorative banner (vector replacement for the original artwork):
+         deep navy base with neon cyan and violet accents. -->
+    <path
+        android:fillColor="#0A0F24"
+        android:pathData="M0,0 H400 V160 H0 Z" />
+    <path
+        android:fillColor="#22D3EE"
+        android:fillAlpha="0.25"
+        android:pathData="M80,160 L260,0 L340,0 L160,160 Z" />
+    <path
+        android:fillColor="#8B5CF6"
+        android:fillAlpha="0.35"
+        android:pathData="M52,44 A30,30 0 1 1 52,104 A30,30 0 1 1 52,44 Z" />
+    <path
+        android:fillColor="#22D3EE"
+        android:fillAlpha="0.5"
+        android:pathData="M330,104 A12,12 0 1 1 330,128 A12,12 0 1 1 330,104 Z" />
+
+</vector>

@@ -1,0 +1,25 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="400dp"
+    android:height="100dp"
+    android:viewportWidth="400"
+    android:viewportHeight="100">
+
+    <!-- Decorative strip (vector replacement for the original artwork):
+         deep navy base with a neon cyan diagonal and violet accent. -->
+    <path
+        android:fillColor="#0A0F24"
+        android:pathData="M0,0 H400 V100 H0 Z" />
+    <path
+        android:fillColor="#22D3EE"
+        android:fillAlpha="0.30"
+        android:pathData="M-10,100 L150,0 L230,0 L70,100 Z" />
+    <path
+        android:fillColor="#8B5CF6"
+        android:fillAlpha="0.40"
+        android:pathData="M368,22 A24,24 0 1 1 368,70 A24,24 0 1 1 368,22 Z" />
+    <path
+        android:fillColor="#E879F9"
+        android:fillAlpha="0.5"
+        android:pathData="M96,60 A7,7 0 1 1 96,74 A7,7 0 1 1 96,60 Z" />
+
+</vector>
