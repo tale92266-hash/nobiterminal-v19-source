@@ -1,0 +1,74 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ListPreference
+        app:key="nobi_extra_keys_preset"
+        app:title="@string/nobi_extra_keys_preset_title"
+        app:summary="@string/nobi_extra_keys_screen_summary"
+        app:entries="@array/nobi_extra_keys_preset_entries"
+        app:entryValues="@array/nobi_extra_keys_preset_entry_values"
+        app:defaultValue="custom"/>
+
+    <Preference
+        app:key="nobi_extra_keys_reorder"
+        app:title="@string/nobi_extra_keys_reorder_preference_title"
+        app:summary="@string/nobi_extra_keys_reorder_preference_summary"
+        app:persistent="false"/>
+
+    <PreferenceCategory
+        app:title="@string/nobi_extra_keys_keys_title">
+
+        <CheckBoxPreference
+            app:key="nobi_key_ESC"
+            app:title="ESC"/>
+        <CheckBoxPreference
+            app:key="nobi_key_DRAWER"
+            app:title="@string/nobi_key_drawer_title"/>
+        <CheckBoxPreference
+            app:key="nobi_key_TAB"
+            app:title="TAB"/>
+        <CheckBoxPreference
+            app:key="nobi_key_CTRL"
+            app:title="CTRL"/>
+        <CheckBoxPreference
+            app:key="nobi_key_ALT"
+            app:title="ALT"/>
+        <CheckBoxPreference
+            app:key="nobi_key_|"
+            app:title="|"/>
+        <CheckBoxPreference
+            app:key="nobi_key_-"
+            app:title="-"/>
+        <CheckBoxPreference
+            app:key="nobi_key_/"
+            app:title="/"/>
+        <CheckBoxPreference
+            app:key="nobi_key__"
+            app:title="_"/>
+        <CheckBoxPreference
+            app:key="nobi_key_HOME"
+            app:title="HOME"/>
+        <CheckBoxPreference
+            app:key="nobi_key_END"
+            app:title="END"/>
+        <CheckBoxPreference
+            app:key="nobi_key_PGUP"
+            app:title="PGUP"/>
+        <CheckBoxPreference
+            app:key="nobi_key_PGDN"
+            app:title="PGDN"/>
+        <CheckBoxPreference
+            app:key="nobi_key_LEFT"
+            app:title="LEFT"/>
+        <CheckBoxPreference
+            app:key="nobi_key_DOWN"
+            app:title="DOWN"/>
+        <CheckBoxPreference
+            app:key="nobi_key_UP"
+            app:title="UP"/>
+        <CheckBoxPreference
+            app:key="nobi_key_RIGHT"
+            app:title="RIGHT"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

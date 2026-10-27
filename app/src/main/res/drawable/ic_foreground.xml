@@ -1,0 +1,24 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:height="108dp"
+    android:width="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- NobiTerminal neon "N" launcher mark: violet underlay offset behind
+         the cyan letterform. Keep in sync with non-adaptive ic_launcher.xml -->
+
+    <group
+        android:translateX="3"
+        android:translateY="3">
+        <path
+            android:fillColor="#8B5CF6"
+            android:pathData="M30,78 L30,30 L40,30 L66,62 L66,30 L78,30 L78,78 L68,78 L42,46 L42,78 Z"
+            />
+    </group>
+
+    <path
+        android:fillColor="#22D3EE"
+        android:pathData="M30,78 L30,30 L40,30 L66,62 L66,30 L78,30 L78,78 L68,78 L42,46 L42,78 Z"
+        />
+
+</vector>

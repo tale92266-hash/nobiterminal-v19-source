@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Android 12+ splash screen attributes for the launch theme. -->
+    <style name="Theme.NobiTerminal.Launch" parent="Theme.TermuxActivity.DayNight.NoActionBar">
+        <item name="android:windowBackground">@drawable/nobi_splash_background</item>
+        <item name="android:windowSplashScreenBackground">@color/nobi_splash_background</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/ic_foreground</item>
+    </style>
+
+</resources>

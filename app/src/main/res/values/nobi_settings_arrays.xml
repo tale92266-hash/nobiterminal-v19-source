@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="nobi_theme_entries">
+        <item>Nobi Neon</item>
+        <item>Dark</item>
+        <item>Dracula</item>
+        <item>Matrix</item>
+        <item>Solarized Dark</item>
+        <item>One Dark</item>
+        <item>Midnight Purple</item>
+        <item>Nord</item>
+        <item>Monokai</item>
+        <item>Gruvbox</item>
+        <item>Default</item>
+    </string-array>
+
+    <string-array name="nobi_theme_entry_values">
+        <item>nobi_neon</item>
+        <item>dark</item>
+        <item>dracula</item>
+        <item>matrix</item>
+        <item>solarized_dark</item>
+        <item>one_dark</item>
+        <item>midnight_purple</item>
+        <item>nord</item>
+        <item>monokai</item>
+        <item>gruvbox</item>
+        <item>default</item>
+    </string-array>
+
+    <string-array name="nobi_extra_keys_preset_entries">
+        <item>Default</item>
+        <item>Developer</item>
+        <item>Minimal</item>
+        <item>Off</item>
+        <item>Custom</item>
+    </string-array>
+
+    <string-array name="nobi_extra_keys_preset_entry_values">
+        <item>default</item>
+        <item>developer</item>
+        <item>minimal</item>
+        <item>off</item>
+        <item>custom</item>
+    </string-array>
+
+    <!-- v7 (69): launcher icon styles. -->
+    <string-array name="nobi_launcher_icon_entries">
+        <item>Default (neon N)</item>
+        <item>Violet N</item>
+        <item>Mono N</item>
+    </string-array>
+
+    <string-array name="nobi_launcher_icon_values">
+        <item>default</item>
+        <item>violet</item>
+        <item>mono</item>
+    </string-array>
+
+</resources>

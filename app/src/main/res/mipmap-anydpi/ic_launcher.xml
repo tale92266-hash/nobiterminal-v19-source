@@ -1,0 +1,27 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- v6: pre-Android-8 fallback launcher icon (the adaptive icon in
+         mipmap-anydpi-v26 covers API 26+). Same navy background + neon "N"
+         as ic_foreground, so the old Termux PNGs are gone everywhere. -->
+
+    <path
+        android:fillColor="#070B1F"
+        android:pathData="M0,0 L108,0 L108,108 L0,108 Z" />
+
+    <group
+        android:translateX="3"
+        android:translateY="3">
+        <path
+            android:fillColor="#8B5CF6"
+            android:pathData="M30,78 L30,30 L40,30 L66,62 L66,30 L78,30 L78,78 L68,78 L42,46 L42,78 Z" />
+    </group>
+
+    <path
+        android:fillColor="#22D3EE"
+        android:pathData="M30,78 L30,30 L40,30 L66,62 L66,30 L78,30 L78,78 L68,78 L42,46 L42,78 Z" />
+
+</vector>

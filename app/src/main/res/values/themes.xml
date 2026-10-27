@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+     https://material.io/develop/android/theming/dark
+    -->
+
+    <!-- TermuxApp Light DarkActionBar theme. -->
+    <style name="Theme.TermuxApp.Light.DarkActionBar" parent="Theme.BaseActivity.Light.DarkActionBar"/>
+    <!-- TermuxApp Light NoActionBar theme. -->
+    <style name="Theme.TermuxApp.Light.NoActionBar" parent="Theme.BaseActivity.Light.NoActionBar"/>
+
+    <!-- TermuxApp DayNight DarkActionBar theme. -->
+    <style name="Theme.TermuxApp.DayNight.DarkActionBar" parent="Theme.BaseActivity.DayNight.DarkActionBar"/>
+    <!-- TermuxApp DayNight NoActionBar theme. -->
+    <style name="Theme.TermuxApp.DayNight.NoActionBar" parent="Theme.BaseActivity.DayNight.NoActionBar"/>
+
+    <!-- v17: Settings-only identity theme. Upstream BaseActivity paints the
+         v17: Settings toolbar/status bar bright red (colorPrimary red_400
+         v17: #FF0000, variant red_800 #C4001D) in BOTH modes, which clashes
+         v17: with the Nobi navy+cyan identity. This override is used ONLY by
+         v17: SettingsActivity (manifest); other activities keep the shared
+         v17: theme untouched. Same navy in both modes: the toolbar is brand
+         v17: chrome, not body, and white title text works on navy day+night.
+         v17: w16 light/dark body follow is untouched (delegate night mode). -->
+    <style name="Theme.NobiSettings.DayNight" parent="Theme.TermuxApp.DayNight.NoActionBar">
+        <!-- Drawer/tabs navy (app colors.xml): toolbar + status bar + any
+             primary-tinted control in Settings. -->
+        <item name="colorPrimary">@color/nobi_navy</item>
+        <item name="colorPrimaryVariant">@color/nobi_navy</item>
+        <item name="colorPrimaryDark">@color/nobi_navy</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:statusBarColor">@color/nobi_navy</item>
+    </style>
+
+
+    <!-- TermuxActivity DayNight NoActionBar theme. -->
+    <style name="Theme.TermuxActivity.DayNight.NoActionBar" parent="Theme.TermuxApp.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryVariant">@color/black</item>
+
+        <item name="android:windowBackground">@color/black</item>
+
+        <!-- Avoid action mode toolbar pushing down terminal content when
+             selecting text on pre-6.0 (non-floating toolbar). -->
+        <item name="android:windowActionModeOverlay">true</item>
+
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+
+        <!-- https://developer.android.com/training/tv/start/start.html#transition-color -->
+        <item name="android:windowAllowReturnTransitionOverlap">true</item>
+        <item name="android:windowAllowEnterTransitionOverlap">true</item>
+
+        <!-- Left drawer. -->
+        <item name="buttonBarButtonStyle">@style/TermuxActivity.Drawer.ButtonBarStyle.Light</item>
+        <item name="termuxActivityDrawerBackground">@color/white</item>
+        <item name="termuxActivityDrawerImageTint">@color/black</item>
+
+        <!-- Extra keys colors. -->
+        <item name="extraKeysButtonTextColor">@color/white</item>
+        <item name="extraKeysButtonActiveTextColor">@color/red_400</item>
+        <item name="extraKeysButtonBackgroundColor">@color/black</item>
+        <item name="extraKeysButtonActiveBackgroundColor">@color/grey_500</item>
+    </style>
+
+    <!-- NobiTerminal launch theme: branded splash window background, replaced
+         as soon as the terminal activity applies its own styling. -->
+    <style name="Theme.NobiTerminal.Launch" parent="Theme.TermuxActivity.DayNight.NoActionBar">
+        <item name="android:windowBackground">@drawable/nobi_splash_background</item>
+    </style>
+
+</resources>

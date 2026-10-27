@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nobi_menu_new_window">New Window</string>
+    <string name="nobi_menu_nobicode">Nobi Code</string>
+    <string name="nobi_menu_new_session">New Session</string>
+    <string name="nobi_menu_permissions">Permissions</string>
+    <string name="nobi_menu_settings">Settings</string>
+    <string name="nobi_menu_exit">Exit</string>
+    <!-- v6 batch 1-16 drawer rows. -->
+    <string name="nobi_menu_quick_commands">Quick Commands</string>
+    <string name="nobi_menu_find">Find in Terminal</string>
+    <string name="nobi_menu_server">Start Server</string>
+    <string name="nobi_menu_session_tools">Session Tools</string>
+</resources>

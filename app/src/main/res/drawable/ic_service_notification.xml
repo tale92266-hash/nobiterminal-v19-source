@@ -1,0 +1,21 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!--
+        v6: notification icon is the NobiTerminal neon "N" mark (white
+        silhouette — the system tints small icons). Replaces the old Termux
+        chevron logo. Same N path as ic_foreground, scaled 108 -> 24.
+    -->
+
+    <group>
+        <clip-path
+            android:pathData="M0,0h24v24h-24z"/>
+
+        <path
+            android:pathData="M6.67,17.33 L6.67,6.67 L8.89,6.67 L14.67,13.78 L14.67,6.67 L17.33,6.67 L17.33,17.33 L15.11,17.33 L9.33,10.22 L9.33,17.33 Z"
+            android:fillColor="#ffffff"/>
+
+    </group>
+</vector>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- v7 (32): home-screen widget — terminal + editor shortcuts. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FF0A0F24"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+    <Button
+        android:id="@+id/nobi_widget_terminal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Terminal"
+        android:textColor="#FF22D3EE" />
+
+    <Button
+        android:id="@+id/nobi_widget_editor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Nobi Code"
+        android:textColor="#FF22D3EE" />
+</LinearLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- NobiTerminal brand navy, used as launcher icon and splash background. -->
+    <color name="nobi_icon_background">#070B1F</color>
+    <color name="nobi_splash_background">#070B1F</color>
+    <!-- v9: drawer + keys-bar navy, same as the tabs bar (#FF0A0F24). -->
+    <color name="nobi_navy">#FF0A0F24</color>
+</resources>

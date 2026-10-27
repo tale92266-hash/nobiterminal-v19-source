@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- v10: Notifications screen + Permissions hub. All UI text English. -->
+    <string name="nobi_notifications_title">Notifications</string>
+    <string name="nobi_notifications_view">View notifications</string>
+    <string name="nobi_notifications_empty_no_access">Notification access is off, so there is nothing to show here. Turn it on to read your notifications inside NobiTerminal. Nothing is sent anywhere.</string>
+    <string name="nobi_notifications_empty_none">No notifications yet. New notifications will appear here once they arrive.</string>
+    <string name="nobi_notifications_grant">Turn on notification access</string>
+    <string name="nobi_notifications_clear">Clear</string>
+    <string name="nobi_notifications_showing_latest">Showing the latest 30 notifications.</string>
+    <string name="nobi_permissions_title">Permissions</string>
+    <string name="nobi_permissions_intro">Tap a permission to grant it. Nothing is requested all at once — each permission is asked for only when you tap it, and saying no only limits that one feature.</string>
+    <string name="nobi_perm_granted">Granted</string>
+    <string name="nobi_perm_not_granted">Not granted</string>
+    <string name="nobi_perm_already_granted">Already granted</string>
+    <string name="nobi_perm_open_settings_failed">Could not open system settings</string>
+    <string name="nobi_perm_notif_access_title">Notification access</string>
+    <string name="nobi_perm_notif_access_desc">Read notifications from other apps and show them inside NobiTerminal. Read-only — no replies, nothing sent out.</string>
+    <string name="nobi_perm_overlay_title">Draw over other apps</string>
+    <string name="nobi_perm_overlay_desc">Show the floating window on top of other apps.</string>
+    <string name="nobi_perm_all_files_title">All files access</string>
+    <string name="nobi_perm_all_files_desc">Browse and edit files anywhere on the device, like a file manager.</string>
+    <string name="nobi_perm_install_title">Install packages</string>
+    <string name="nobi_perm_install_desc">Install APK files from the terminal without needing another installer app.</string>
+    <string name="nobi_perm_battery_title">Battery optimisation exemption</string>
+    <string name="nobi_perm_battery_desc">Keep the background service running reliably.</string>
+    <string name="nobi_perm_post_notif_title">Post notifications</string>
+    <string name="nobi_perm_post_notif_desc">Show NobiTerminal\u2019s own notifications for sessions and the server.</string>
+    <string name="nobi_perm_storage_title">Storage and media</string>
+    <string name="nobi_perm_storage_desc">Read and write media files and downloads.</string>
+</resources>

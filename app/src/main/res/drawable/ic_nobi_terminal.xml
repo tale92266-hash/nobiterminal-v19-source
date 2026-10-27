@@ -1,0 +1,18 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:height="108dp"
+    android:width="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- v8 (icon audit): was the old Termux white ">_" chevron mark.
+         Now the neon "N" letterform as a white silhouette, so drawer
+         rows (tinted via termuxActivityDrawerImageTint), the Nobi Code
+         launcher shortcut and pinned command shortcuts all show the N
+         mark instead of the old chevron. Same N path as ic_foreground /
+         ic_service_notification, scaled to this 108 viewport. -->
+
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M30,78 L30,30 L40,30 L66,62 L66,30 L78,30 L78,78 L68,78 L42,46 L42,78 Z" />
+
+</vector>

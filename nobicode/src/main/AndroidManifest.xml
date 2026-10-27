@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="29" />
+
+    <application>
+        <!-- Nobi Code editor, integrated into NobiTerminal (v5). No launcher
+             entry of its own: it is opened from the terminal drawer menu. -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.NobiCode"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- v7: terminal↔editor intents arrive via onNewIntent (singleTask). -->
+        <activity
+            android:name=".js.JsConsoleActivity"
+            android:exported="false"
+            android:theme="@style/Theme.NobiCode" />
+
+        <activity
+            android:name=".ai.AiChatActivity"
+            android:exported="false"
+            android:theme="@style/Theme.NobiCode" />
+
+        <activity
+            android:name=".plugins.PluginActivity"
+            android:exported="false"
+            android:theme="@style/Theme.NobiCode" />
+
+        <activity
+            android:name=".followup.FollowupSplitActivity"
+            android:exported="false"
+            android:theme="@style/Theme.NobiCode" />
+
+        <activity
+            android:name=".compare.CompareActivity"
+            android:exported="false"
+            android:theme="@style/Theme.NobiCode" />
+
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false"
+            android:label="Settings"
+            android:theme="@style/Theme.NobiCode.DayNight" />
+
+        <activity
+            android:name=".ProjectManagerActivity"
+            android:exported="false"
+            android:label="Projects"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.NobiCode" />
+
+        <activity
+            android:name=".PreviewActivity"
+            android:exported="false"
+            android:theme="@style/Theme.NobiCode" />
+
+        <activity
+            android:name=".CrashReportActivity"
+            android:exported="false"
+            android:process=":crash_reporter"
+            android:theme="@style/Theme.NobiCode" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+</manifest>
